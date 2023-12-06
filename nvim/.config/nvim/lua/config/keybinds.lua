@@ -46,6 +46,9 @@ map("n", "<leader>fa", ":Telescope live_grep<CR>", opts)
 map("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 map("n", "<leader>o", ":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>", opts)
 
+-- Lsp
+map("n", "<leader>K", ":lua vim.lsp.buf.definition()<CR>", opts)
+
 -- NvimTree
 map("n", "\\", ":NvimTreeFindFile<CR>", opts)
 map("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
