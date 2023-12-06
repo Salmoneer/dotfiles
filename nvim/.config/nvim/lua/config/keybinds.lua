@@ -6,32 +6,34 @@ map("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- -- Change window more easily
--- map("n", "<C-h>", "<C-w>h", opts)
--- map("n", "<C-j>", "<C-w>j", opts)
--- map("n", "<C-k>", "<C-w>k", opts)
--- map("n", "<C-l>", "<C-w>l", opts)
---
--- -- Resize splits
--- map("n", "<C-Up>", ":resize +2<CR>", opts)
--- map("n", "<C-Down>", ":resize -2<CR>", opts)
--- map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
--- map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+-- Change window more easily
+map("n", "<C-h>", "<C-w>h", opts)
+map("n", "<C-j>", "<C-w>j", opts)
+map("n", "<C-k>", "<C-w>k", opts)
+map("n", "<C-l>", "<C-w>l", opts)
 
--- Tmux resize splits
-map("n", "<C-Up>", ":lua require('tmux').resize_up()<CR>", opts)
-map("n", "<C-Down>", ":lua require('tmux').resize_down()<CR>", opts)
-map("n", "<C-Left>", ":lua require('tmux').resize_left()<CR>", opts)
-map("n", "<C-Right>", ":lua require('tmux').resize_right()<CR>", opts)
+-- Resize splits
+map("n", "<C-Up>", ":resize +2<CR>", opts)
+map("n", "<C-Down>", ":resize -2<CR>", opts)
+map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Change buffers
 map("n", "<S-l>", ":bn<CR>", opts)
 map("n", "<S-h>", ":bp<CR>", opts)
 map("n", "<C-d>", ":bd<CR>", opts)
 
+-- Resize buffers
+map("n", "<C-S-l>", ":BufferLineMoveNext<CR>", opts)
+map("n", "<C-S-h>", ":BufferLineMovePrev<CR>", opts)
+
 -- Stay in indent mode
 map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
+
+-- Move text up and down in visual mode
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+map("v", "<A-h>", ":m '<-2<CR>gv=gv", opts)
 
 -- Lazy.nvim
 map("n", "<leader>ll", ":Lazy<CR>", opts)
