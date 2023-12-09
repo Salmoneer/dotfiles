@@ -17,18 +17,20 @@ local options = {
     -- Swapfiles/backup
     backup = false,
     writebackup = false,
-    swapfile = true,
-    updatetime = 300,
+    swapfile = false,
+    undofile = true,
+    undodir = os.getenv("HOME") .. "/.vim/undodir",
     -- Misc
+    updatetime = 300,
     fileencoding = "utf-8",
     clipboard = "unnamedplus",
     mouse = "a",
-    wrap = false,
-    undofile = true,
+    wrap = true,
     showmode = false,
-    --cmdheight = 2,
     completeopt = { "menuone", "noselect" },
     termguicolors = true,
+    hlsearch = false,
+    incsearch = true,
 }
 
 for k, v in pairs(options) do

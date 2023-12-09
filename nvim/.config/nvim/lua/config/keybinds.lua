@@ -1,56 +1,69 @@
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 
-local opts = { noremap = true, silent = true }
-
-map("", "<Space>", "<Nop>", opts)
+-- Leader
+map("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Change window more easily
-map("n", "<C-h>", "<C-w>h", opts)
-map("n", "<C-j>", "<C-w>j", opts)
-map("n", "<C-k>", "<C-w>k", opts)
-map("n", "<C-l>", "<C-w>l", opts)
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-j>", "<C-w>j")
+map("n", "<C-k>", "<C-w>k")
+map("n", "<C-l>", "<C-w>l")
 
 -- Resize splits
-map("n", "<C-Up>", ":resize +2<CR>", opts)
-map("n", "<C-Down>", ":resize -2<CR>", opts)
-map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+map("n", "<C-Up>", ":resize +2<CR>")
+map("n", "<C-Down>", ":resize -2<CR>")
+map("n", "<C-Left>", ":vertical resize -2<CR>")
+map("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- Change buffers
-map("n", "<S-l>", ":bn<CR>", opts)
-map("n", "<S-h>", ":bp<CR>", opts)
-map("n", "<C-d>", ":bd<CR>", opts)
+map("n", "<S-l>", ":bn<CR>")
+map("n", "<S-h>", ":bp<CR>")
+map("n", "<C-d>", ":bd<CR>")
 
--- Resize buffers
-map("n", "<C-S-l>", ":BufferLineMoveNext<CR>", opts)
-map("n", "<C-S-h>", ":BufferLineMovePrev<CR>", opts)
+-- Move buffers
+map("n", "<C-S-l>", ":BufferLineMoveNext<CR>")
+map("n", "<C-S-h>", ":BufferLineMovePrev<CR>")
+
+-- Variations of normal actions
+map("n", "<leader>u", ":UndotreeToggle<CR>")
+map("x", "<leader>p", [["_dP]])
 
 -- Stay in indent mode
-map("v", "<", "<gv", opts)
-map("v", ">", ">gv", opts)
+map("v", "<", "<gv")
+map("v", ">", ">gv")
 
--- Move text up and down in visual mode
-map("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
-map("v", "<A-h>", ":m '<-2<CR>gv=gv", opts)
+-- Move text up and down
+map("n", "<M-j>", ":m .+1<CR>==")
+map("n", "<M-k>", ":m .-2<CR>==")
+map("i", "<M-j>", "<ESC>:m .+1<CR>==gi")
+map("i", "<M-k>", "<ESC>:m .-2<CR>==gi")
+map("v", "<M-j>", ":m '>+1<CR>gv=gv")
+map("v", "<M-k>", ":m '<-2<CR>gv=gv")
 
+
+-- Plugins
 -- Lazy.nvim
-map("n", "<leader>ll", ":Lazy<CR>", opts)
+map("n", "<leader>ll", ":Lazy<CR>")
 
 -- Telescope
-map("n", "<leader>t", ":Telescope<CR>", opts)
-map("n", "<leader>,", ":Telescope quickfix<CR>", opts)
-map("n", "<leader>ft", ":Telescope current_buffer_fuzzy_find<CR>", opts)
-map("n", "<leader>fa", ":Telescope live_grep<CR>", opts)
-map("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-map("n", "<leader>o", ":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>", opts)
+map("n", "<leader>t", ":Telescope<CR>")
+map("n", "<leader>,", ":Telescope quickfix<CR>")
+map("n", "<leader>ft", ":Telescope current_buffer_fuzzy_find<CR>")
+map("n", "<leader>fa", ":Telescope live_grep<CR>")
+map("n", "<leader>ff", ":Telescope find_files<CR>")
+map("n", "<leader>fg", ":Telescope git_files<CR>")
+map("n", "<leader>o", ":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>")
 
 -- Lsp
-map("n", "<leader>K", ":lua vim.lsp.buf.definition()<CR>", opts)
+map("n", "<leader>e", ":lua vim.diagnostic.open_float()<CR>")
+map("n", "<leader>K", ":lua vim.lsp.buf.definition()<CR>")
+map("n", "<leader>F", ":lua vim.lsp.buf.format()<CR>")
 
 -- NvimTree
-map("n", "\\", ":NvimTreeFindFile<CR>", opts)
-map("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
+map("n", "\\", ":NvimTreeFindFile<CR>")
+map("n", "<C-b>", ":NvimTreeToggle<CR>")
 
-map("n", "<leader>e", ":lua vim.diagnostic.open_float()<CR>", opts)
+-- Double typing speed
+map("n", "<leader>fml", ":CellularAutomaton make_it_rain<CR>")
