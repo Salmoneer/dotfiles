@@ -2,8 +2,11 @@ return {
     "akinsho/bufferline.nvim",
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
-    opts = { options = {
-        separator_style = "slope",
-        offsets = { { filetype = "NvimTree", text = "", padding = 0 } },
-    } },
+    opts = {
+        options = {
+            themable = true,
+            separator_style = "thin",
+            offsets = { { filetype = "NvimTree", text = "", padding = 0 } },
+        }
+    },
 }

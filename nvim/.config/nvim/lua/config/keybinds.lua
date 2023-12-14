@@ -30,6 +30,9 @@ map("n", "<C-S-h>", ":BufferLineMovePrev<CR>")
 map("n", "<leader>u", ":UndotreeToggle<CR>")
 map("x", "<leader>p", [["_dP]])
 
+-- Make executable
+map("n", "<leader>x", ":! chmod +x %<CR>")
+
 -- Stay in indent mode
 map("v", "<", "<gv")
 map("v", ">", ">gv")
