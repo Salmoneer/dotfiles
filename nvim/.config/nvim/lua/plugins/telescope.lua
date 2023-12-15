@@ -4,7 +4,7 @@ return {
         "nvim-lua/plenary.nvim",
         "BurntSushi/ripgrep",
         "nvim-telescope/telescope-media-files.nvim",
-        "nvim-telescope/telescope-dap.nvim"
+        "nvim-telescope/telescope-ui-select.nvim"
     },
     config = function()
         require("telescope").setup({
@@ -16,6 +16,7 @@ return {
             },
         })
         require("telescope").load_extension("media_files")
-        require("telescope").load_extension("dap")
+        require("telescope").load_extension("ui-select")
+
     end,
 }
