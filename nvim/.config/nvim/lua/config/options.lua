@@ -36,3 +36,5 @@ local options = {
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
+
+vim.g.gutentags_cache_dir = vim.fn.expand("~/.cache/nvim/tags/")
