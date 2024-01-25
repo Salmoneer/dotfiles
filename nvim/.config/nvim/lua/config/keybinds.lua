@@ -6,10 +6,10 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Change window more easily
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-j>", "<C-w>j")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-l>", "<C-w>l")
+-- map("n", "<C-h>", "<C-w>h")
+-- map("n", "<C-j>", "<C-w>j")
+-- map("n", "<C-k>", "<C-w>k")
+-- map("n", "<C-l>", "<C-w>l")
 
 -- Resize splits
 map("n", "<C-Up>", ":resize +2<CR>")
