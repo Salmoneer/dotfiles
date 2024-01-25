@@ -109,6 +109,8 @@ export PATH="$HOME/coding/cross/opt/cross/bin/:$PATH"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias lg="lazygit"
+
 [[ -z "$TMUX" ]] && { tmux attach || exec tmux new-session && exit;}
 
 # >>> conda initialize >>>
