@@ -5,5 +5,11 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
-    opts = {},
+    opts = {
+        actions = {
+            open_file = {
+                resize_window = true
+            }
+        }
+    },
 }
