@@ -4,12 +4,7 @@ return {
     lazy = false,
     dependencies = {
         "nvim-tree/nvim-web-devicons",
+        "famiu/bufdelete.nvim",
     },
-    opts = {
-        actions = {
-            open_file = {
-                resize_window = true
-            }
-        }
-    },
+    opts = {},
 }

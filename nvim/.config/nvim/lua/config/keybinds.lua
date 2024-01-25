@@ -23,7 +23,7 @@ map("n", "<C-Right>", ":vertical resize +2<CR>")
 -- Change buffers
 map("n", "<S-l>", ":BufferLineCycleNext<CR>")
 map("n", "<S-h>", ":BufferLineCyclePrev<CR>")
-map("n", "<C-q>", ":bd<CR>")
+map("n", "<C-q>", ":Bd<CR>")
 
 -- Move buffers
 map("n", "<C-A-l>", ":BufferLineMoveNext<CR>")
