@@ -5,6 +5,9 @@ map("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Clear highlight with escape
+map("n", "<ESC>", ":nohl<CR>")
+
 -- Change window more easily
 -- map("n", "<C-h>", "<C-w>h")
 -- map("n", "<C-j>", "<C-w>j")

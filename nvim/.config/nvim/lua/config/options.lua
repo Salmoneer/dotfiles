@@ -29,7 +29,7 @@ local options = {
     showmode = false,
     completeopt = { "menuone", "noselect" },
     termguicolors = true,
-    hlsearch = false,
+    hlsearch = true,
     incsearch = true,
 }
 
