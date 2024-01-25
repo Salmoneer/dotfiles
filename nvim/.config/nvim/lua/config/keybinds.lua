@@ -74,3 +74,4 @@ map("n", "<C-b>", ":NvimTreeToggle<CR>")
 
 -- Double typing speed
 map("n", "<leader>fml", ":CellularAutomaton make_it_rain<CR>")
+map("n", "<leader>gol", ":CellularAutomaton game_of_life<CR>")
