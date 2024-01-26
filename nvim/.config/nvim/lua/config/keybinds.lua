@@ -8,6 +8,9 @@ vim.g.maplocalleader = " "
 -- Clear highlight with escape
 map("n", "<ESC>", ":nohl<CR>")
 
+-- Replace a line with C (S is taken by sneak)
+map("n", "C", "S")
+
 -- Change window more easily
 -- map("n", "<C-h>", "<C-w>h")
 -- map("n", "<C-j>", "<C-w>j")
