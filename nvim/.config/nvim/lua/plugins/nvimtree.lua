@@ -6,5 +6,10 @@ return {
         "nvim-tree/nvim-web-devicons",
         "famiu/bufdelete.nvim",
     },
-    opts = {},
+    opts = {
+        git = {
+            enable = true,
+            ignore = true
+        }
+    },
 }
