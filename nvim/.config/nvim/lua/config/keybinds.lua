@@ -35,6 +35,8 @@ map("n", "<C-A-h>", ":BufferLineMovePrev<CR>")
 -- Variations of normal actions
 map("n", "<leader>u", ":UndotreeToggle<CR>")
 map("x", "<leader>p", [["_dP]])
+map("n", "<leader>p", "p`[v`]=")
+map("n", "<leader>P", "P`[v`]=")
 
 -- Make executable
 map("n", "<leader>x", ":! chmod +x %<CR>")
@@ -70,6 +72,8 @@ map("n", "<leader>K", ":lua vim.lsp.buf.definition()<CR>")
 map("n", "<leader>F", ":lua vim.lsp.buf.format()<CR>")
 map("n", "<leader>,", ":lua vim.lsp.buf.code_action()<CR>")
 map("n", "<leader>.", ":lua vim.lsp.buf.hover()<CR>")
+map("n", "<leader>dn", ":lua vim.diagnostic.goto_next()<CR>")
+map("n", "<leader>dp", ":lua vim.diagnostic.goto_prev()<CR>")
 
 -- NvimTree
 map("n", "\\", ":NvimTreeFindFile<CR>")
