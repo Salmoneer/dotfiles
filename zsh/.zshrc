@@ -1,5 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
+ZSH_THEME="robbyrussell"
+
 zstyle ':omz:update' mode disabled  # disabled, auto or reminder
 # zstyle ':omz:update' frequency 7 # Auto-update frequency, in days
 
@@ -16,6 +18,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export LANG=en_AU.UTF-8
+
 export EDITOR='nvim'
 export VISUAL='nvim'
 
