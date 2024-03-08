@@ -1,0 +1,89 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 40, // Waybar height (to be removed for auto height)
+    "spacing": 0, // Gaps between modules (4px)
+    "margin-top": 8,
+    "margin-left": 8,
+    "margin-right": 8,
+
+    "modules-left": [
+        "custom/rofi",
+        "wireplumber",
+        "custom/microphone",
+        "tray"
+    ],
+
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+
+    "modules-right": [
+        "custom/cpu",
+        "custom/ram",
+        "custom/gpu",
+        "clock",
+        "custom/power"
+    ],
+
+
+    "custom/rofi": {
+        "format": ""
+    },
+
+    "wireplumber": {
+        "format": "󰋋 {volume}%",
+        "format-muted": "󰟎 {volume}%",
+        "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+        "scroll-step": 5.0
+    },
+
+    "custom/microphone": {
+        "format": "{}%",
+        "exec": "$HOME/.config/waybar/scripts/mic.sh",
+        "interval": 1,
+        "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "format-icons": {
+            "active": "󰝥",
+            "default": "󰝦"
+        },
+        "disable-scroll": false,
+        "on-scroll-up": "hyprctl dispatch workspace -1",
+        "on-scroll-down": "hyprctl dispatch workspace +1",
+
+    },
+
+ 
+    "custom/cpu": {
+        "format": " {}%",
+        "exec": "$HOME/.config/waybar/scripts/cpu.sh",
+        "interval": 5
+    },
+
+    "custom/ram": {
+        "format": " {}",
+        "exec": "$HOME/.config/waybar/scripts/ram.sh",
+        "interval": 5
+    },
+
+    "custom/gpu": {
+        "format": "󰾲 {}%",
+        "exec": "$HOME/.config/waybar/scripts/gpu.sh",
+        "interval": 5
+    },
+
+    "clock": {
+        "format": "󰃮 {:%A %d/%m %H:%M}"
+    },
+
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout"
+    }
+}

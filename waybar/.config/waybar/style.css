@@ -1,0 +1,187 @@
+/* Catppuccin Macchiato palette */
+
+@define-color base   #24273a;
+@define-color mantle #1e2030;
+@define-color crust  #181926;
+
+@define-color text     #cad3f5;
+@define-color subtext0 #a5adcb;
+@define-color subtext1 #b8c0e0;
+
+@define-color surface0 #363a4f;
+@define-color surface1 #494d64;
+@define-color surface2 #5b6078;
+
+@define-color overlay0 #6e738d;
+@define-color overlay1 #8087a2;
+@define-color overlay2 #939ab7;
+
+@define-color blue      #8aadf4;
+@define-color lavender  #b7bdf8;
+@define-color sapphire  #7dc4e4;
+@define-color sky       #91d7e3;
+@define-color teal      #8bd5ca;
+@define-color green     #a6da95;
+@define-color yellow    #eed49f;
+@define-color peach     #f5a97f;
+@define-color maroon    #ee99a0;
+@define-color red       #ed8796;
+@define-color mauve     #c6a0f6;
+@define-color pink      #f5bde6;
+@define-color flamingo  #f0c6c6;
+@define-color rosewater #f4dbd6;
+
+
+/* Styling */
+
+* {
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    font-family: "Fira Code Nerd Font";
+    font-size: 12pt;
+}
+
+#waybar {
+    background: transparent;
+    color: @text;
+}
+
+#custom-rofi {
+    background-color: @mantle;
+    color: @blue;
+    border-radius: 20px;
+    font-size: 16pt;
+    min-width: 40px;
+    padding-right: 0.47rem;
+}
+
+#wireplumber {
+    background-color: @mantle;
+    color: @lavender;
+    border-radius: 20px 0 0 20px;
+    padding: 0 16px;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+#custom-microphone {
+    background-color: @mantle;
+    color: @sapphire;
+    border-radius: 0 20px 20px 0;
+    padding-right: 16px;
+    font-weight: bold;
+}
+
+#tray {
+    background-color: @mantle;
+    padding: 0 16px;
+    margin-left: 8px;
+    border-radius: 20px;
+}
+
+#tray menu {
+    background-color: @surface0;
+    color: @text;
+}
+
+/* Workspaces */
+
+#workspaces {
+    margin-left: 8px;
+    padding: 0 20px;
+    background-color: @mantle;
+    border-radius: 20px;
+}
+
+#workspaces button {
+    margin: 8px 6px;
+    min-width: 24px;
+    background-color: @overlay1;
+    border-radius: 100%;
+    animation: popup 0.4s linear;
+    animation-iteration-count: 1;
+}
+
+#workspaces button.visible {
+    background-color: @sapphire;
+    animation: popup 0.4s linear, stretch 0.2s linear;
+}
+
+@keyframes popup {
+    0% {
+        margin-top: 16px;
+        margin-bottom: 0;
+    }
+
+    40% {
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+
+    90% {
+        margin-top: 12px;
+        margin-bottom: 4px;
+    }
+
+    100% {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+}
+
+@keyframes stretch {
+    30% {
+        margin-top: 3px;
+        min-width: 16px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+#custom-cpu {
+    color: @teal;
+    background-color: @mantle;
+    border-radius: 20px 0 0 20px;
+    padding: 0 16px;
+    font-weight: bold;
+}
+
+#custom-ram {
+    color: @green;
+    background-color: @mantle;
+    border-radius: 0;
+    font-weight: bold;
+}
+
+#custom-gpu {
+    color: @yellow;
+    background-color: @mantle;
+    border-radius: 0 20px 20px 0;
+    padding: 0 16px;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+#clock {
+    color: @peach;
+    background-color: @mantle;
+    border-radius: 20px;
+    padding: 0 16px;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+#clock * {
+    font-size: 14pt;
+}
+
+#custom-power {
+    color: @red;
+    background-color: @mantle;
+    min-width: 40px;
+    border-radius: 20px;
+    font-size: 16pt;
+    padding-right: 0.28rem;
+}
