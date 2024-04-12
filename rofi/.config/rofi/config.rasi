@@ -1,16 +1,27 @@
-configuration{
-    modi: "run,drun,window";
-    icon-theme: "Oranchelo";
+configuration {
+    modes: [drun,run];
+    font: "FiraCode Nerd Font 12";
     show-icons: true;
-    terminal: "alacritty";
-    drun-display-format: "{icon} {name}";
-    location: 0;
-    disable-history: false;
-    hide-scrollbar: true;
-    display-drun: "   Apps ";
-    display-run: "   Run ";
-    display-window: "   Window";
-    sidebar-mode: true;
+    terminal: "kitty";
+    window-command: "hyprctl dispatch focuswindow {window}";
+    drun-display-format: "{name}";
+    sort: true;
+    sorting-method: "fzf";
+    matching: "fuzzy";
+    scroll-method: 1;
+    max-history-size: 100;
+
+    display-window: "󰘔";
+    display-run: "";
+    display-drun: "";
+
+    // Unbind control j and control k
+    kb-remove-to-eol: "";
+    kb-accept-entry: "Return";
+
+    // Rebind control j and control k to up and down
+    kb-row-up: "Up,Control+k";
+    kb-row-down: "Down,Control+j";
 }
 
-@theme "catppuccin-macchiato"
+@theme "theme.rasi"

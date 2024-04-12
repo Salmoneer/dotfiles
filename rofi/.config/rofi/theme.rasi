@@ -1,0 +1,84 @@
+* {
+    // Catppuccin Macchiato colours
+    rosewater: #f4dbd6;
+    flamingo: #f0c6c6;
+    pink: #f5bde6;
+    mauve: #c6a0f6;
+    red: #ed8796;
+    maroon: #ee99a0;
+    peach: #f5a97f;
+    yellow: #eed49f;
+    green: #a6da95;
+    teal: #8bd5ca;
+    sky: #91d7e3;
+    sapphire: #7dc4e4;
+    blue: #8aadf4;
+    lavender: #b7bdf8;
+    text: #cad3f5;
+    subtext1: #b8c0e0;
+    subtext0: #a5adcb;
+    overlay2: #939ab7;
+    overlay1: #8087a2;
+    overlay0: #6e738d;
+    surface2: #5b6078;
+    surface1: #494d64;
+    surface0: #363a4f;
+    base: #24273a;
+    mantle: #1e2030;
+    crust: #181926;
+
+    font: "FiraCode Nerd Font 16";
+    vertical-align: 0.5;
+
+    text-color: @text;
+    cursor-color: @text;
+}
+
+window {
+    width: 600px;
+    padding: 4px;
+    background-color: @crust;
+    border-radius: 8px;
+}
+
+mainbox {
+    background-color: inherit;
+    border-radius: inherit;
+}
+
+inputbar {
+    children: [prompt,entry];
+    border-radius: 8px 8px 0 0;
+}
+
+inputbar, prompt, entry {
+    background-color: @mantle;
+}
+
+prompt {
+    padding: 12px;
+}
+
+listview {
+    background-color: @base;
+    margin: 2px 0 0 0;
+    padding: 4px 8px 8px 8px;
+    columns: 1;
+    lines: 10;
+}
+
+element, element-text, element-icon {
+    background-color: @base;
+}
+
+element {
+    margin: 4px 0 0 0;
+}
+
+element-icon {
+    padding: 0 8px 0 0;
+}
+
+element-text selected {
+    text-color: @red;
+}
