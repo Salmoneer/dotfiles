@@ -1,81 +1,54 @@
-local map = vim.keymap.set
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
--- Leader
-map("", "<Space>", "<Nop>")
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.keymap.set("n", "<ESC>", ":noh<CR>")
 
--- Clear highlight with escape
-map("n", "<ESC>", ":nohl<CR>")
+vim.keymap.set("n", "<C-Up>", ":resize +2<CR>")
+vim.keymap.set("n", "<C-Down>", ":resize -2<CR>")
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
--- Change window more easily
--- map("n", "<C-h>", "<C-w>h")
--- map("n", "<C-j>", "<C-w>j")
--- map("n", "<C-k>", "<C-w>k")
--- map("n", "<C-l>", "<C-w>l")
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
 
--- Resize splits
-map("n", "<C-Up>", ":resize +2<CR>")
-map("n", "<C-Down>", ":resize -2<CR>")
-map("n", "<C-Left>", ":vertical resize -2<CR>")
-map("n", "<C-Right>", ":vertical resize +2<CR>")
+vim.keymap.set("n", "\\", ":Oil<CR>")
+vim.keymap.set("n", "<leader>fs", ":lua require('oil.actions').open_cwd.callback()<CR>")
 
--- Change buffers
-map("n", "<S-l>", ":BufferLineCycleNext<CR>")
-map("n", "<S-h>", ":BufferLineCyclePrev<CR>")
-map("n", "<C-q>", ":Bd<CR>")
+vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>")
+vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("n", "<leader>p", "p`[v`]=")
+vim.keymap.set("n", "<leader>P", "P`[v`]=")
+vim.keymap.set("n", "<leader>x", ":! chmod +x %<CR>")
 
--- Move buffers
-map("n", "<C-A-l>", ":BufferLineMoveNext<CR>")
-map("n", "<C-A-h>", ":BufferLineMovePrev<CR>")
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
--- Variations of normal actions
-map("n", "<leader>u", ":UndotreeToggle<CR>")
-map("x", "<leader>p", [["_dP]])
-map("n", "<leader>p", "p`[v`]=")
-map("n", "<leader>P", "P`[v`]=")
+vim.keymap.set("n", "<M-j>", ":m .+1<CR>==")
+vim.keymap.set("n", "<M-k>", ":m .-2<CR>==")
+vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv")
 
--- Make executable
-map("n", "<leader>x", ":! chmod +x %<CR>")
+vim.keymap.set("n", "<leader>l", ":Lazy<CR>")
 
--- Stay in indent mode
-map("v", "<", "<gv")
-map("v", ">", ">gv")
+vim.keymap.set("n", "<leader>fa", ":Telescope live_grep<CR>")
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>")
 
--- Move text up and down
-map("n", "<M-j>", ":m .+1<CR>==")
-map("n", "<M-k>", ":m .-2<CR>==")
--- map("i", "<M-j>", "<ESC>:m .+1<CR>==gi")
--- map("i", "<M-k>", "<ESC>:m .-2<CR>==gi")
-map("v", "<M-j>", ":m '>+1<CR>gv=gv")
-map("v", "<M-k>", ":m '<-2<CR>gv=gv")
+vim.keymap.set("n", "<leader>t", ":Trouble<CR>")
 
-
--- Plugins
--- Lazy.nvim
-map("n", "<leader>ll", ":Lazy<CR>")
-
--- Telescope
-map("n", "<leader>t", ":Telescope<CR>")
-map("n", "<leader>ft", ":Telescope current_buffer_fuzzy_find<CR>")
-map("n", "<leader>fa", ":Telescope live_grep<CR>")
-map("n", "<leader>ff", ":Telescope find_files<CR>")
-map("n", "<leader>fg", ":Telescope git_files<CR>")
-map("n", "<leader>o", ":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>")
-
--- Lsp
-map("n", "<leader>e", ":lua vim.diagnostic.open_float()<CR>")
-map("n", "<leader>K", ":lua vim.lsp.buf.definition()<CR>")
-map("n", "<leader>F", ":lua vim.lsp.buf.format()<CR>")
-map("n", "<leader>,", ":lua vim.lsp.buf.code_action()<CR>")
-map("n", "<leader>.", ":lua vim.lsp.buf.hover()<CR>")
-map("n", "<leader>dn", ":lua vim.diagnostic.goto_next()<CR>")
-map("n", "<leader>dp", ":lua vim.diagnostic.goto_prev()<CR>")
-
--- NvimTree
-map("n", "\\", ":NvimTreeFindFile<CR>")
-map("n", "<C-b>", ":NvimTreeToggle<CR>")
-
--- Double typing speed
-map("n", "<leader>fml", ":CellularAutomaton make_it_rain<CR>")
-map("n", "<leader>gol", ":CellularAutomaton game_of_life<CR>")
+-- LSP binds
+vim.keymap.set("n", "<leader>e", ":lua vim.diagnostic.open_float()<CR>")
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
+vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help)
+vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition)
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
+vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action)
+vim.keymap.set('n', 'gr', vim.lsp.buf.references)
+vim.keymap.set('n', '<leader>f', function()
+    vim.lsp.buf.format { async = true }
+end)

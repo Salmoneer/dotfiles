@@ -1,10 +1,16 @@
 return {
     {
         "neovim/nvim-lspconfig",
-        event = "BufReadPre",
         dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
-            "williamboman/mason-lspconfig.nvim",
+            {
+                "hrsh7th/cmp-nvim-lsp"
+            },
+            {
+                "williamboman/mason-lspconfig.nvim",
+                dependencies = {
+                    "williamboman/mason.nvim",
+                },
+            },
         },
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -19,19 +25,18 @@ return {
     },
     {
         "williamboman/mason.nvim",
-        build = ":MasonUpdate",
         opts = {
-            pip = {
-                upgrade_pip = true,
-            },
             ui = {
-                border = "rounded",
                 icons = {
                     package_installed = "✓",
-                    package_pending = "➜",
                     package_uninstalled = "✗",
+                    package_pending = "⟳",
                 },
             },
         },
     },
+    {
+        "ray-x/lsp_signature.nvim",
+        opts = {},
+    }
 }
