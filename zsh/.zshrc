@@ -4,8 +4,8 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
-zstyle ':omz:update' mode disabled  # disabled, auto or reminder
-# zstyle ':omz:update' frequency 7 # Auto-update frequency, in days
+zstyle ":omz:update" mode disabled  # disabled, auto or reminder
+# zstyle ":omz:update" frequency 7 # Auto-update frequency, in days
 
 # Plugins (found in $ZSH/plugins)
 plugins=(
@@ -21,8 +21,8 @@ source $ZSH/oh-my-zsh.sh
 
 export LANG=en_US.UTF-8
 
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
