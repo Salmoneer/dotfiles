@@ -24,8 +24,8 @@ export LANG=en_US.UTF-8
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 # Aliases
 
 [[ -z "$TMUX" ]] && { tmux attach || exec tmux new-session && exit;}
-
-eval "$(zoxide init --cmd cd zsh)"
