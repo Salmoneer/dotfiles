@@ -1,8 +1,5 @@
 return {
     "nvim-lualine/lualine.nvim",
-    dependencies = {
-        "vimpostor/vim-tpipeline"
-    },
     opts = {
         options = {
             icons_enabled = false,
@@ -24,8 +21,8 @@ return {
         },
 
         sections = {
-            lualine_a = {"mode"},
-            lualine_b = {"branch", "diff",
+            lualine_a = { "mode" },
+            lualine_b = { "branch", "diff",
                 {
                     "diagnostics",
                     symbols = {
@@ -36,10 +33,10 @@ return {
                     }
                 },
             },
-            lualine_c = {"filename"},
-            lualine_x = {'encoding', 'fileformat', 'filetype'},
-            lualine_y = {"progress"},
-            lualine_z = {"location"}
+            lualine_c = { "filename" },
+            lualine_x = { "encoding", "fileformat", "filetype" },
+            lualine_y = { "progress" },
+            lualine_z = { "location" }
         },
     },
 }
