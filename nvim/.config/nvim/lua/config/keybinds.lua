@@ -1,5 +1,5 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.keymap.set("n", "<ESC>", ":noh<CR>")
 
@@ -14,7 +14,6 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 vim.keymap.set("n", "\\", ":Oil<CR>")
-vim.keymap.set("n", "<leader>fs", ":lua require('oil.actions').open_cwd.callback()<CR>")
 
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>")
 vim.keymap.set("x", "<leader>p", [["_dP]])
@@ -39,16 +38,14 @@ vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>")
 vim.keymap.set("n", "<leader>t", ":Trouble<CR>")
 
 -- LSP binds
-vim.keymap.set("n", "<leader>e", ":lua vim.diagnostic.open_float()<CR>")
-vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
-vim.keymap.set('n', 'K', vim.lsp.buf.hover)
-vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
-vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help)
-vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition)
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
-vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action)
-vim.keymap.set('n', 'gr', vim.lsp.buf.references)
-vim.keymap.set('n', '<leader>f', function()
-    vim.lsp.buf.format { async = true }
-end)
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "K", vim.lsp.buf.hover)
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
+vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help)
+vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition)
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+vim.keymap.set({ "n", "v" }, "<leader>,", vim.lsp.buf.code_action)
+vim.keymap.set("n", "gr", vim.lsp.buf.references)
+vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end)
