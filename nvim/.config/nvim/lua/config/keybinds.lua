@@ -45,6 +45,7 @@ vim.keymap.set("n", "K", vim.lsp.buf.hover)
 vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
 vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition)
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
-vim.keymap.set("n", "<leader>,", vim.lsp.buf.code_action)
+-- Set in plugins/lsp.lua
+-- vim.keymap.set("n", "<leader>,", require("actions-preview").code_actions)
 vim.keymap.set("n", "gr", vim.lsp.buf.references)
 vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end)

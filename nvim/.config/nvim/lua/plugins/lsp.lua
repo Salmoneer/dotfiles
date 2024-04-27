@@ -52,5 +52,11 @@ return {
         opts = {
             hint_enable = false
         },
-    }
+    },
+    {
+        "aznhe21/actions-preview.nvim",
+        config = function()
+            vim.keymap.set("n", "<leader>,", require("actions-preview").code_actions)
+        end,
+    },
 }
