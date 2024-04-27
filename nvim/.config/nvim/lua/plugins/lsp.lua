@@ -49,6 +49,8 @@ return {
     },
     {
         "ray-x/lsp_signature.nvim",
-        opts = {},
+        opts = {
+            hint_enable = false
+        },
     }
 }
