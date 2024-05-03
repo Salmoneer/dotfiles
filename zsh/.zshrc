@@ -27,3 +27,5 @@ export VISUAL="nvim"
 # Aliases
 
 [[ -z "$TMUX" ]] && { tmux attach || exec tmux new-session && exit;}
+
+eval "$(zoxide init --cmd cd zsh)"
