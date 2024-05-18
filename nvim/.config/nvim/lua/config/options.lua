@@ -3,6 +3,7 @@ local options = {
     relativenumber = true,
     signcolumn = "yes",
     numberwidth = 4,
+    showmode = false,
 
     expandtab = true,
     tabstop = 4,
