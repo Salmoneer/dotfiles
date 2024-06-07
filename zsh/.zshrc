@@ -8,6 +8,7 @@ zstyle ":omz:update" mode disabled  # disabled, auto or reminder
 # zstyle ":omz:update" frequency 7 # Auto-update frequency, in days
 
 # Plugins (found in $ZSH/plugins)
+
 plugins=(
     git
     zsh-autocomplete
@@ -25,6 +26,8 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 # Aliases
+
+alias odin='$HOME/build/odin/odin'
 
 [[ -z "$TMUX" ]] && { tmux attach || exec tmux new-session && exit;}
 
