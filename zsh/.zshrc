@@ -27,7 +27,7 @@ export VISUAL="nvim"
 
 # Aliases
 
-alias odin='$HOME/build/odin/odin'
+export PATH="$HOME/build/odin":$PATH
 
 [[ -z "$TMUX" ]] && { tmux attach || exec tmux new-session && exit;}
 
