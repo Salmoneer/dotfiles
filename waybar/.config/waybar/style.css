@@ -35,153 +35,66 @@
 /* Styling */
 
 * {
-    border: none;
-    border-radius: 0;
     margin: 0;
     padding: 0;
     font-family: "Fira Code Nerd Font";
-    font-size: 12pt;
+    font-size: 16pt;
 }
 
 #waybar {
-    background: transparent;
-    color: @text;
+    background-color: @crust;
+    border-radius: 24px;
 }
 
-#custom-rofi {
-    background-color: @mantle;
-    color: @blue;
-    border-radius: 20px;
-    font-size: 16pt;
-    min-width: 40px;
-    padding-right: 0.47rem;
-}
-
-#wireplumber {
-    background-color: @mantle;
-    color: @lavender;
-    border-radius: 20px 0 0 20px;
-    padding: 0 16px;
-    font-weight: bold;
-    margin-left: 8px;
-}
-
-#custom-microphone {
-    background-color: @mantle;
-    color: @sapphire;
-    border-radius: 0 20px 20px 0;
-    padding-right: 16px;
-    font-weight: bold;
-}
-
-#tray {
-    background-color: @mantle;
-    padding: 0 16px;
-    margin-left: 8px;
-    border-radius: 20px;
-}
-
-#tray menu {
-    background-color: @surface0;
-    color: @text;
-}
-
-/* Workspaces */
-
-#workspaces {
-    margin-left: 8px;
-    padding: 0 20px;
-    background-color: @mantle;
-    border-radius: 20px;
+#custom-logo {
+    background-color: @blue;
+    color: @crust;
+    min-width: 48px;
+    margin: 5px;
+    padding-left: 5px;
+    border-radius: 19px;
 }
 
 #workspaces button {
-    margin: 8px 6px;
-    min-width: 24px;
-    background-color: @overlay1;
-    border-radius: 100%;
-    animation: popup 0.4s linear;
-    animation-iteration-count: 1;
+    background-color: @crust;
+    color: @text;
+    margin: 5px;
+    padding: 0 5px 0 5px;
 }
 
 #workspaces button.visible {
-    background-color: @sapphire;
-    animation: popup 0.4s linear, stretch 0.2s linear;
+    background-color: @blue;
+    color: @crust;
 }
 
-@keyframes popup {
-    0% {
-        margin-top: 16px;
-        margin-bottom: 0;
-    }
 
-    40% {
-        margin-top: 0;
-        margin-bottom: 16px;
-    }
-
-    90% {
-        margin-top: 12px;
-        margin-bottom: 4px;
-    }
-
-    100% {
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
+#window {
+    color: @text;
 }
 
-@keyframes stretch {
-    30% {
-        margin-top: 3px;
-        min-width: 16px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-}
-
-#custom-cpu {
-    color: @teal;
-    background-color: @mantle;
-    border-radius: 20px 0 0 20px;
-    padding: 0 16px;
-    font-weight: bold;
-}
-
-#custom-ram {
-    color: @green;
-    background-color: @mantle;
-    border-radius: 0;
-    font-weight: bold;
-}
-
-#custom-gpu {
-    color: @yellow;
-    background-color: @mantle;
-    border-radius: 0 20px 20px 0;
-    padding: 0 16px;
-    margin-right: 8px;
-    font-weight: bold;
-}
 
 #clock {
-    color: @peach;
-    background-color: @mantle;
-    border-radius: 20px;
-    padding: 0 16px;
-    margin-right: 8px;
-    font-weight: bold;
+    background-color: @blue;
+    color: @mantle;
+    margin: 5px;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
 }
 
-#clock * {
-    font-size: 14pt;
+#wireplumber {
+    background-color: @blue;
+    color: @mantle;
+    min-width: 32px;
+    margin: 5px;
+    padding-right: 7px;
+    border-radius: 19px;
 }
 
 #custom-power {
-    color: @red;
-    background-color: @mantle;
-    min-width: 40px;
-    border-radius: 20px;
-    font-size: 16pt;
-    padding-right: 0.28rem;
+    background-color: @blue;
+    color: @mantle;
+    min-width: 32px;
+    margin: 5px;
+    padding-left: 6px;
+    border-radius: 19px;
 }
