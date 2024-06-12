@@ -75,7 +75,7 @@
 
 #clock {
     background-color: @blue;
-    color: @mantle;
+    color: @crust;
     margin: 5px;
     padding: 0 5px 0 5px;
     border-radius: 5px;
@@ -83,7 +83,7 @@
 
 #wireplumber {
     background-color: @blue;
-    color: @mantle;
+    color: @crust;
     min-width: 32px;
     margin: 5px;
     padding-right: 7px;
@@ -92,7 +92,7 @@
 
 #custom-power {
     background-color: @blue;
-    color: @mantle;
+    color: @crust;
     min-width: 32px;
     margin: 5px;
     padding-left: 6px;
