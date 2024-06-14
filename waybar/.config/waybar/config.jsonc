@@ -24,7 +24,7 @@
 
 
     "clock": {
-        "format": "{:%H:%M}",
+        "format": "{:%d/%m %H:%M}",
         "interval": 5
     },
 
