@@ -1,5 +1,6 @@
 if [ -z $TMUX ]; then
     tmux
+    exit
 fi
 
 # Setup zinit
