@@ -1,34 +1,61 @@
-export SHELL=/usr/bin/zsh
+if [ -z $TMUX ]; then
+    tmux
+fi
 
-export ZSH="$HOME/.oh-my-zsh"
+# Setup zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-ZSH_THEME="robbyrussell"
+if [ ! -d "$ZINIT_HOME" ]; then
+    mkdir -p "$(dirname $ZINIT_HOME)"
+    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
 
-zstyle ":omz:update" mode disabled  # disabled, auto or reminder
-# zstyle ":omz:update" frequency 7 # Auto-update frequency, in days
+source "${ZINIT_HOME}/zinit.zsh"
 
-# Plugins (found in $ZSH/plugins)
+# Configuration
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
-plugins=(
-    git
-    zsh-autocomplete
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-)
+# Zsh builtin settings
+zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
+zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
+zstyle ":completion:*" menu no
+zstyle ":completion:*:descriptions" format "[%d]"
+zstyle ':completion:*:git-checkout:*' sort false
 
-source $ZSH/oh-my-zsh.sh
+# Emacs keybindings
+bindkey -e
+bindkey "^p" history-search-backward
+bindkey "^n" history-search-forward
 
-# User configuration
+# Plugin configuration
+source "${HOME}/.config/zsh/catppuccin-syntax-highlighting.zsh"
+source "${HOME}/.config/zsh/catppuccin-fzf.zsh"
+export LS_COLORS="$(vivid generate catppuccin-macchiato)"
 
-export LANG=en_US.UTF-8
+# Load plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
 
-export EDITOR="nvim"
-export VISUAL="nvim"
+# Load completions
+autoload -U compinit && compinit
+
+# Load shell integrations
+eval "$(oh-my-posh init zsh --config ~/.config/omp/catppuccin.toml)"
+eval "$(fzf --zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 
 # Aliases
-
-export PATH="$HOME/build/odin":$PATH
-
-[[ -z "$TMUX" ]] && { tmux attach || exec tmux new-session && exit;}
-
-eval "$(zoxide init --cmd cd zsh)"
+alias ls="ls --color"
