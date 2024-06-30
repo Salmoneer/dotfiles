@@ -1,5 +1,5 @@
 if [ -z $TMUX ]; then
-    tmux
+    tmux attach-session || tmux
     exit
 fi
 
