@@ -48,4 +48,4 @@ vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 -- Set in plugins/lsp.lua
 -- vim.keymap.set("n", "<leader>,", require("actions-preview").code_actions)
 vim.keymap.set("n", "gr", vim.lsp.buf.references)
-vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end)
+vim.keymap.set("n", "<leader>F", function() vim.lsp.buf.format({ async = true }) end)
