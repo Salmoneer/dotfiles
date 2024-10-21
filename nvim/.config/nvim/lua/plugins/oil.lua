@@ -1,5 +1,5 @@
 return {
-    'stevearc/oil.nvim',
-    opts = {},
+    "stevearc/oil.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
 }

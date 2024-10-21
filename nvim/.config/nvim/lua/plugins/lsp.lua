@@ -2,20 +2,17 @@ return {
     {
         "neovim/nvim-lspconfig",
         dependencies = {
-            {
-                "hrsh7th/cmp-nvim-lsp"
-            },
-            {
-                "williamboman/mason-lspconfig.nvim",
-                dependencies = {
-                    "williamboman/mason.nvim",
-                },
+            "williamboman/mason-lspconfig.nvim",
+            dependencies = {
+                "williamboman/mason.nvim",
             },
         },
         config = function()
+            -- automatically register lsps installed through mason
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             require("mason-lspconfig").setup_handlers({
                 function(server_name)
+                    -- dont show errors for vim global in config
                     if server_name == "lua_ls" then
                         require("lspconfig").lua_ls.setup({
                             settings = {
@@ -27,30 +24,17 @@ return {
                             }
                         })
                     else
+                        -- all other lsps
                         require("lspconfig")[server_name].setup({
                             capabilities = capabilities
                         })
                     end
                 end
             })
-        end
+        end,
     },
     {
         "williamboman/mason.nvim",
-        opts = {
-            ui = {
-                icons = {
-                    package_installed = "✓",
-                    package_uninstalled = "✗",
-                    package_pending = "⟳",
-                },
-            },
-        },
-    },
-    {
-        "aznhe21/actions-preview.nvim",
-        config = function()
-            vim.keymap.set("n", "<leader>,", require("actions-preview").code_actions)
-        end,
+        opts = {},
     },
 }
