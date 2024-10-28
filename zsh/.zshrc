@@ -14,8 +14,8 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Environment variables
-VISUAL=nvim
-EDITOR=nvim
+export VISUAL=nvim
+export EDITOR=nvim
 
 # Configuration
 # History
