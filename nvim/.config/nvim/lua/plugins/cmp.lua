@@ -39,14 +39,24 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
                 ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-                ["<Tab>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+                ["<Tab>"] = cmp.mapping(function(fallback)
+                    if cmp.visible() then
+                        cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
+                    elseif luasnip.locally_jumpable(1) then
+                        luasnip.jump(1)
+                    else
+                        fallback()
+                    end
+                end),
                 ["<C-c>"] = cmp.mapping.abort(),
+                ["<C-f>"] = cmp.mapping.scroll_docs(2),
+                ["<C-b>"] = cmp.mapping.scroll_docs(-2),
             }),
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
+                { name = "nvim_lsp_signature_help" },
                 { name = "path" },
                 { name = "buffer" },
-                { name = "nvim_lsp_signature_help" }
             }),
             formatting = {
                 format = require("lspkind").cmp_format({
