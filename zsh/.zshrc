@@ -13,6 +13,10 @@ fi
 
 source "${ZINIT_HOME}/zinit.zsh"
 
+# Environment variables
+VISUAL=nvim
+EDITOR=nvim
+
 # Configuration
 # History
 HISTSIZE=5000
