@@ -1,5 +1,6 @@
 if test -z $TMUX
     tmux attach-session || tmux
+    exit
 end
 
 set fish_greeting
