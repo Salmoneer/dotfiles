@@ -1,6 +1,5 @@
-if test -z $TMUX
-    tmux attach-session || tmux
-    exit
+if status is-interactive && test -z $TMUX
+    tmux && kill -9 $fish_pid
 end
 
 set fish_greeting
