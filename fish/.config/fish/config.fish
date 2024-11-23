@@ -13,4 +13,4 @@ set -gx LS_COLORS (vivid generate catppuccin-macchiato)
 source ~/.config/fish/alias.fish
 
 oh-my-posh init fish --config ~/.config/omp/catppuccin.toml | source
-zoxide init fish | source
+zoxide init fish --cmd cd | source
