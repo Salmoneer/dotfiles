@@ -1,74 +1,5 @@
-#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
-
-version = 2
+version = 3
 final_space = true
-
-[[blocks]]
-  type = 'prompt'
-  alignment = 'left'
-  newline = true
-
-  [[blocks.segments]]
-    type = 'path'
-    style = 'plain'
-    background = 'transparent'
-    foreground = 'p:blue'
-    template = '{{ .Path }}'
-
-    [blocks.segments.properties]
-      style = 'full'
-
-  [[blocks.segments]]
-    type = 'git'
-    style = 'plain'
-    background = 'transparent'
-    foreground = 'p:teal'
-    template = ' {{ if .Detached }}{{ substr 0 6 .Commit.Sha }}{{ else }}{{ .Ref }}{{ end }}{{ if .Staging.Changed }}+{{ else if .Working.Changed }}*{{ end }} {{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}'
-
-    [blocks.segments.properties]
-      fetch_status = true
-
-[[blocks]]
-  type = 'prompt'
-  alignment = 'right'
-  overflow = 'hide'
-
-  [[blocks.segments]]
-    type = 'executiontime'
-    style = 'plain'
-    background = 'transparent'
-    foreground = 'p:green'
-    template = 'took {{ .FormattedMs }}'
-
-    [blocks.segments.properties]
-      threshold = 500
-      always_enabled = false
-      style = 'austin'
-
-[[blocks]]
-  type = 'prompt'
-  alignment = 'left'
-  newline = true
-
-  [[blocks.segments]]
-    type = 'text'
-    style = 'plain'
-    background = 'transparent'
-    foreground_templates = [
-      '{{ if ne .Code 0 }}p:red{{ end }}',
-      '{{ if eq .Code 0 }}p:mauve{{ end }}',
-    ]
-    template = '❯'
-
-[secondary_prompt]
-  background = 'transparent'
-  foreground = 'p:mauve'
-  template = '❯ '
-
-[transient_prompt]
-  background = 'transparent'
-  foreground = 'p:mauve'
-  template = '❯ '
 
 [palette]
   base = '#24273a'
@@ -97,3 +28,73 @@ final_space = true
   teal = '#8bd5ca'
   text = '#cad3f5'
   yellow = '#eed49f'
+
+[secondary_prompt]
+  template = '❯ '
+  foreground = 'p:mauve'
+  background = 'transparent'
+
+[transient_prompt]
+  template = '❯ '
+  foreground = 'p:mauve'
+  background = 'transparent'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = '{{ .Path }}'
+    foreground = 'p:blue'
+    background = 'transparent'
+    type = 'path'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+      style = 'full'
+
+  [[blocks.segments]]
+    template = ' {{ if .Detached }}{{ substr 0 6 .Commit.Sha }}{{ else }}{{ .Ref }}{{ end }}{{ if .Staging.Changed }}+{{ else if .Working.Changed }}*{{ end }} {{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}'
+    foreground = 'p:teal'
+    background = 'transparent'
+    type = 'git'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+      fetch_status = true
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'right'
+  overflow = 'hide'
+
+  [[blocks.segments]]
+    template = 'took {{ .FormattedMs }}'
+    foreground = 'p:green'
+    background = 'transparent'
+    type = 'executiontime'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      always_enabled = false
+      cache_duration = 'none'
+      style = 'austin'
+      threshold = 500
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = '❯'
+    background = 'transparent'
+    type = 'text'
+    style = 'plain'
+    foreground_templates = ['{{ if ne .Code 0 }}p:red{{ end }}', '{{ if eq .Code 0 }}p:mauve{{ end }}']
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
