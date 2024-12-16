@@ -5,6 +5,8 @@ end
 
 set fish_greeting
 
+set -ga PATH ~/.local/bin
+
 set -gx VISUAL nvim
 set -gx EDITOR nvim
 
