@@ -4,7 +4,7 @@ vim.g.maplocalleader = " "
 vim.keymap.set("n", " ", "<nop>")
 
 -- hide highlights
-vim.keymap.set("n", "<esc>", ":noh<CR>")
+vim.keymap.set("n", "<esc>", ":noh<CR>:<BS>")
 
 -- stay in visual mode while indenting
 vim.keymap.set("v", "<", "<gv")
