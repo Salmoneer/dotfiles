@@ -7,6 +7,10 @@ set fish_greeting
 
 set -ga PATH ~/.local/bin
 
+set -g ZVM_INSTALL $HOME/.zvm/self
+set -ga PATH $HOME/.zvm/bin
+set -ga PATH $ZVM_INSTALL
+
 set -gx VISUAL nvim
 set -gx EDITOR nvim
 
