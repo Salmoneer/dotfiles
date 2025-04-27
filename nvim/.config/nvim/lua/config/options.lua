@@ -1,9 +1,8 @@
-local options = {
+local opts = {
     number = true,
     relativenumber = true,
     signcolumn = "yes",
     numberwidth = 4,
-    showmode = false,
 
     expandtab = true,
     tabstop = 4,
@@ -18,12 +17,14 @@ local options = {
     undofile = true,
     undodir = vim.fn.stdpath("data") .. "/undodir",
 
-    scrolloff = 8,
+    scrolloff = 4,
     clipboard = "unnamedplus",
     incsearch = true,
     termguicolors = true,
+
+    winborder = "rounded",
 }
 
-for k, v in pairs(options) do
+for k, v in pairs(opts) do
     vim.o[k] = v
 end
