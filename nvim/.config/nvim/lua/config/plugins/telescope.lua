@@ -22,9 +22,10 @@ return {
     config = function(_, opts)
         require("telescope").setup(opts)
         local builtin = require("telescope.builtin")
-        vim.keymap.set('n', '<leader>ff', builtin.find_files, { silent = true })
+        vim.keymap.set("n", "<leader>ff", builtin.find_files, { silent = true })
         vim.keymap.set("n", "<leader>fa", builtin.live_grep, { silent = true })
         vim.keymap.set("n", "<leader>fb", builtin.buffers, { silent = true })
-        require('telescope').load_extension('fzf')
+        vim.keymap.set("n", "<leader>fe", builtin.diagnostics, { silent = true })
+        require("telescope").load_extension("fzf")
     end,
 }
