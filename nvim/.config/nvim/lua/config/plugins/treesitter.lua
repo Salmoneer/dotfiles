@@ -12,13 +12,11 @@ return {
 
             sync_install = false,
 
-            modules = {
-                highlight = {
-                    enable = true,
-                },
-                indent = {
-                    enable = true
-                },
+            highlight = {
+                enable = true,
+            },
+            indent = {
+                enable = true
             },
         })
     end,
